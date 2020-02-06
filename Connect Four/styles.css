@@ -1,0 +1,25 @@
+button{
+    padding: 10px;
+    color:crimson;
+    font-size: medium;
+    text-emphasis: bold italic;
+    font: oblique;
+    border: 5px solid black;
+    box-shadow: beige;
+    border-radius: 8px;
+}
+button:hover{
+    text-decoration: transparent;
+}
+
+
+h1{
+    outline: ridge;
+    color:grey;
+    text-decoration-color: crimson;
+    font-size: large;
+    text-decoration: underline;
+    border: 10px;
+    border-radius: 8px;
+
+}
