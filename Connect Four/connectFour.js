@@ -20,7 +20,7 @@ let board = [
 ];
 
 function setup() {
-createCanvas(1000,1000);
+createCanvas(500,500);
 playing = true;
 currPlayer = players[round(Math.random())];
 }
@@ -84,6 +84,21 @@ for(let i = 0; i <= 3; i++){
   }
   }
 }
+//this function will take j, the y coordinate, and check underneath it to see if there is a spot, if there isn't we increment and return
+function propagate(i,j){
+   if((j < 5) && (board[j+1][i] == '') ){
+    console.log('j is' + j);
+     return propagate(i, j+1);
+     
+   }
+   else{
+     return j;
+   }
+    
+}
+
+
+
 // now we want to draw the circles in the corresponding spots if they are clicked by a player.
 function mousePressed(){
   // alert(currPlayer+ "'s turn"); yeah this is kind of annoying so I turned it off.
@@ -96,9 +111,12 @@ for(let j = 0; j <= 5 ; j++){
       && ((mouseY >= yinc*j) && (mouseY <= yinc * (j+1)) ) ){
         if(board[j][i] == ''){
         fill(currPlayer);
-        circle((xinc/2)*((2*i)+1),(yinc/2)*((2*j)+1),r);
+        console.log('init j is: '+j);
+        var newJ = propagate(i,j);
+        console.log('newJ is: '+ newJ);
+        circle((xinc/2)*((2*i)+1),(yinc/2)*((2*newJ)+1),r);
         noFill();
-        board[j][i] = currPlayer;
+        board[newJ][i] = currPlayer;
         outcome();
         turnHandler();
         }

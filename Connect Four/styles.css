@@ -1,15 +1,19 @@
+
+body{
+    background-color: rgb(32,32,32);
+}
+
 button{
-    padding: 10px;
-    color:crimson;
-    font-size: medium;
-    text-emphasis: bold italic;
-    font: oblique;
-    border: 5px solid black;
-    box-shadow: beige;
+    padding: 10px 10px;
+    background-color:crimson;
+    color: black;
+    border: 5px solid grey;
+    box-shadow: grey;
     border-radius: 8px;
 }
 button:hover{
     text-decoration: transparent;
+    cursor: pointer;
 }
 
 
