@@ -1,2 +1,2 @@
-# Coding-Challenges
-A collection of games, applications and components for future use.
+# Connect-Four
+Connect Four implemented with Raw HTML, JS and CSS using p5Js libraries for drawing.
